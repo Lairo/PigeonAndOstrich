@@ -14,16 +14,16 @@ namespace PigeonAndOstrich
             {
                 Bird bird;
                 Console.Write("\nPress P for pigeon, O for ostrich: ");
-                char key = Char.ToUppor(Console.ReadKey().KeyChar);
+                char key = Char.ToUpper(Console.ReadKey().KeyChar);
                 if (key == 'P') bird = new Pigeon();
                 else if (key == 'O') bird = new Ostrich();
                 else return;
                 Console.Write("\nHow many eggs should it lay? ");
-                if (!int.TryParse(Console.ReadKey(), out numberOfEggs)) return;
+                if (!int.TryParse(Console.ReadLine(), out int numberOfEggs)) return;
                 Egg[] eggs = bird.LayEggs(numberOfEggs);
-                foreach (Egg[] egg in eggs)
+                foreach (Egg egg in eggs)
                 {
-                    Console.WriteLine(eggs.Description);
+                    Console.WriteLine(egg.Description);
                 }
             }
         }
